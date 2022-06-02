@@ -8,5 +8,11 @@
 </head>
 <body>
     <h1>Cursos de Programacion</h1>
+
+    <ol>
+        @foreach ($categories as $category)
+            <li>{{$category->name}}</li>    
+        @endforeach
+    </ol>
 </body>
 </html>

@@ -18,4 +18,12 @@ use Illuminate\Support\Facades\Route;
     return view('welcome');
 });
  */
-Route::get('/', HomeController::class);
+
+Route::controller(HomeController::class)->group(function () {
+    
+    Route::get('/','index');
+    Route::get('/sobrenosotros','aboutus');
+    Route::get('/contacto','contact');
+
+});
+
