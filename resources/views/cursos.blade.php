@@ -19,7 +19,7 @@
 <main class="row justify-content-center">
 
     <div class="col-10 text-center text-white pt-5 pb-2">
-        <h1>Eventos disponibles</h1>
+        <h1>Cursos disponibles</h1>
     </div>
 
     <!-- Filtro -->
