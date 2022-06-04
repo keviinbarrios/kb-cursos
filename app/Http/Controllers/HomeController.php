@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Course;
 
 
 class HomeController extends Controller
@@ -11,8 +12,11 @@ class HomeController extends Controller
     public function index()
     {
         $categories = Category::all();
-        /* dd($categories); */
-        return view('cursos',['categories'=> $categories]);
+        $courses = Course::all();
+        
+        return view('cursos',['categories'=> $categories,
+                    'courses'=>$courses
+        ]);
     }
 
     public function aboutus(){
