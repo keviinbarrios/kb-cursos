@@ -9,14 +9,31 @@ use App\Models\Course;
 
 class HomeController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+       /*  $this->middleware('auth'); */
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
     public function index()
     {
-        $categories = Category::all();
-        $courses = Course::all();
         
-        return view('cursos',['categories'=> $categories,
-                    'courses'=>$courses
-        ]);
+            $categories = Category::all();
+            $courses = Course::all();
+            
+            return view('cursos',['categories'=> $categories,
+                        'courses'=>$courses
+            ]);
+           
     }
 
     public function aboutus(){
@@ -27,6 +44,4 @@ class HomeController extends Controller
     public function contact(){
         return "estoy en contacto";
     }
-
-   
 }

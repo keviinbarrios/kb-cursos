@@ -3,7 +3,7 @@
 use App\Http\Controllers\CoursesCategoryController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
     return view('welcome');
 });
  */
+Auth::routes();
 
 Route::controller(HomeController::class)->group(function () {
     
@@ -30,4 +31,12 @@ Route::controller(HomeController::class)->group(function () {
 });
 
 Route::get('/categoria',[CoursesCategoryController::class,'categories']);
+
+
+
+/* Route::get('/', [HomeController::class, 'index']); */
+
+
+
+
 
