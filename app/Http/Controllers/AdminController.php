@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Course;
+
 
 class AdminController extends Controller
 {
@@ -11,6 +13,8 @@ class AdminController extends Controller
         $this->middleware('auth');
     }
     public function admin(){
-        return view('admin.index');
+
+        $courses = Course::all();
+        return view('admin.courses.index',['courses'=> $courses]);
     }
 }
