@@ -39,9 +39,17 @@ class AdminController extends Controller
         return redirect()->route('admin.categories');
     }
 
+    public function deleteCategory(Request $request,$id){
+        
+        $category = Category::find($id);
+        
+       
+       $category->delete();
+       return redirect()->route('admin.categories');
+    }
+
 
     public function create(){
-        
         
         return view('admin.courses.create');
     

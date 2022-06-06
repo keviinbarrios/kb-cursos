@@ -40,6 +40,8 @@ Route::controller(AdminController::class)->group(function () {
     Route::post('/admin/categoria/create', 'storeCategory')->name('admin.storeCategory');
     Route::get('/admin/categoria','category')->name('admin.categories');
     Route::get('/admin/categoria/create','createCategory')->name('admin.createCategory');
+    Route::delete('/admin/categoria/{id}/delete}','deleteCategory')->name('admin.deleteCategory');
+    
     
 });
 
