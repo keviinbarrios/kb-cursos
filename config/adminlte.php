@@ -248,7 +248,14 @@ return [
         ],
         [
             'text'        => 'cursos',
-            'url'         => 'admin',
+            'url'         => 'admin/cursos',
+            'icon'        => 'far fa-fw fa-file',
+            /* 'label'       => 4,
+            'label_color' => 'success', */
+        ],
+        [
+            'text'        => 'categorias',
+            'url'         => 'admin/categoria',
             'icon'        => 'far fa-fw fa-file',
             /* 'label'       => 4,
             'label_color' => 'success', */

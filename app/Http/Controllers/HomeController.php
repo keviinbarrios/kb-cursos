@@ -41,4 +41,7 @@ class HomeController extends Controller
     public function contact(){
         return "estoy en contacto";
     }
+    public function create(){
+        
+    }
 }
