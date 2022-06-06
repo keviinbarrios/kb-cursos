@@ -29,6 +29,8 @@ class AdminController extends Controller
         return view('admin.categories.create-category');
     }
 
+ 
+
     public function storeCategory(Request $request){
         $category = new Category();
 
@@ -47,7 +49,21 @@ class AdminController extends Controller
        $category->delete();
        return redirect()->route('admin.categories');
     }
+    
+    public function editCategory($id){
+        $category = Category::find($id);
+        return view('admin.categories.edit-category',compact('category'));
+    }
 
+    public function updateCategory(Request $request,$id){
+        $category = Category::find($id);
+
+        $category->name = $request->name;
+
+        $category->save();
+
+        return redirect()->route('admin.categories');
+    }
 
     public function create(){
         

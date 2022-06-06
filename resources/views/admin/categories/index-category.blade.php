@@ -27,12 +27,12 @@
                             <td>{{$category->name}}</td>
                           
                              <td>
-                                    <form action="{{route('admin.deleteCategory', $category->id)}}" method="POST"></form>
+                                    <form action="{{route('admin.deleteCategory', $category->id)}}" method="POST">
                                    {{ @csrf_field()}}
                                     @method("DELETE")
                                     <button href=""class="btn btn-danger">Eliminar</button>
-                                
-                                <a href="" class="btn btn-warning">Editar</a>
+                                    </form>
+                                <a href="{{route('admin.editCategory', $category->id)}}" class="btn btn-warning">Editar</a>
                                 
                             </td>
                         </tr>
