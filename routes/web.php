@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CoursesCategoryController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CourseController;
 use Illuminate\Contracts\Cache\Store;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -35,25 +36,30 @@ Route::controller(HomeController::class)->group(function () {
 Route::controller(AdminController::class)->group(function () {
 
     Route::get('/admin/cursos','admin')->name('admin.courses');
-    Route::get('/admin/cursos/create','create')->name('admin.create');
-    Route::post('/admin/cursos/create', 'store')->name('admin.store');
-    Route::post('/admin/categoria/create', 'storeCategory')->name('admin.storeCategory');
     Route::get('/admin/categoria','category')->name('admin.categories');
-    Route::get('/admin/categoria/create','createCategory')->name('admin.createCategory');
-    Route::delete('/admin/categoria/{id}/delete','deleteCategory')->name('admin.deleteCategory');
-    Route::get('/admin/categoria/{id}/edit','editCategory')->name('admin.editCategory');
-    Route::put('/admin/categoria/{id}/edit','updateCategory')->name('admin.updateCategory');
-        
-  
+});
+
+Route::controller(CourseController::class)->group(function () {
     
+    Route::get('/admin/cursos/create','create')->name('admin.create');
+    Route::post('/admin/cursos/store', 'store')->name('admin.store');
 });
 
 
 
 
+Route::controller(CoursesCategoryController::class)->group(function () {
+
+    Route::get('/categoria','categories');
+    Route::post('/admin/categoria/create', 'storeCategory')->name('admin.storeCategory');
+    Route::get('/admin/categoria/create','createCategory')->name('admin.createCategory');
+    Route::delete('/admin/categoria/{id}/delete','deleteCategory')->name('admin.deleteCategory');
+    Route::get('/admin/categoria/{id}/edit','editCategory')->name('admin.editCategory');
+    Route::put('/admin/categoria/{id}/edit','updateCategory')->name('admin.updateCategory');
+
+});
 
 
-Route::get('/categoria',[CoursesCategoryController::class,'categories']);
 
 
 

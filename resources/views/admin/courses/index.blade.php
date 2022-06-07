@@ -30,7 +30,7 @@
                         @foreach ($courses as $course)
                         <tr>
                             <td>{{$course->title}}</td>
-                            <td><img src="{{$course->featured}}" alt="" width="120"> </td>
+                            <td><img src="{{asset('images/uploads/courses/'.$course->featured)}}" alt="" width="120"> </td>
                             <td>{{$course->date_of_course}}</td>
                             <td>{{$course->place_of_course}}</td>
                             <td>{{$course->status}}</td>
