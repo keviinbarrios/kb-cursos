@@ -36,7 +36,7 @@
                             <td>{{$course->status}}</td>
                             <td>{{$course->category->name}}</td>
                              <td>
-                                <a href="" class="btn btn-warning">Editar</a>
+                                <a href="{{route('admin.edit', $course->id)}}" class="btn btn-warning">Editar</a>
                                 <a href="" class="btn btn-danger">Eliminar</a>
                             </td>
                         </tr>

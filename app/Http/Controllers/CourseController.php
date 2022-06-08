@@ -37,4 +37,14 @@ class CourseController extends Controller
 
           return redirect()->route('admin.courses');
     }
+
+    public function edit($course){
+        $categories = Category::all();
+        $course = Course::find($course);
+
+        return view('admin.courses.edit',[
+            'course'=>$course,
+            'categories'=>$categories
+        ]);
+    }
 }
