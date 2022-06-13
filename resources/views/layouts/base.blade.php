@@ -56,6 +56,7 @@
             </div>
         </footer>
     </div>
+    @yield('js')
     <script src="https://kit.fontawesome.com/bde242f7d4.js" crossorigin="anonymous"></script>
 </body>
 </html>

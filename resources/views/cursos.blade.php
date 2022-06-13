@@ -6,7 +6,7 @@
     
 @endforeach
 <div class="col-sm-12 col-md-10 banner-container text-center">
-    <img src="{{$course->featured}}" class="img-fluid banner-image" alt="Banner principal">
+    <img src="/images/uploads/courses/{{$course->featured}}" class="img-fluid banner-image" alt="Banner principal">
     <div class="text-block">
         <h4 class="text-block-title">{{$course->title}}</h4>
         <p class="text-block-subtitle mb-2">{{$course->place_of_course}}</p>
@@ -46,7 +46,7 @@
         <div class="row justify-content-center events-grid">
             @foreach ( $courses as $course )
             <div class="col-md-4 col-sm-12 text-center event mb-4">
-                <img src="{{$course->featured}}" class="img-fluid" alt="{{$course->title}}" style="width:100%; height:100%; object-fit: cover;">
+                <img src="/images/uploads/courses/{{$course->featured}}" class="img-fluid" alt="{{$course->title}}" style="width:100%; height:100%; object-fit: cover;">
                 <div class="text-block">
                     <h4 class="text-block-title">{{$course->title}}</h4>
                     <p class="text-block-p mb-0 fw-400">{{$course->date_of_course}}</p>

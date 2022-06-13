@@ -44,6 +44,8 @@ Route::controller(CourseController::class)->group(function () {
     Route::get('/admin/cursos/create','create')->name('admin.create');
     Route::post('/admin/cursos/store', 'store')->name('admin.store');
     Route::get('/admin/cursos/{course}/edit', 'edit')->name('admin.edit');
+    Route::post('/admin/cursos/{course}/edit', 'update')->name('admin.update');
+    Route::delete('/admin/cursos/{course}/delete','delete')->name('admin.delete');
 });
 
 

@@ -47,4 +47,33 @@ class CourseController extends Controller
             'categories'=>$categories
         ]);
     }
+    public function update(Request $request,$course){
+        $category = Category::all();
+        $course = Course::find($course);
+        
+        if ($request->hasfile('featured')){
+            $file = $request->file('featured');
+
+            $img_name =time().'_course.'.$file->getClientOriginalExtension();
+            $detinationPath = 'images/uploads/courses';
+            $uploadSuccess= $file->move($detinationPath,$img_name);
+        }
+        $course->category_id = $request->category_id;
+        $course->title = $request ->title;
+        $course->featured = $img_name;
+        $course->date_of_course = $request ->date_of_course;
+        $course->place_of_course = $request ->place_of_course;
+        $course->description = $request ->description;
+
+        $course->save();
+
+        return redirect()->route('admin.courses');
+    }
+    public function delete(Request $request,$course){
+        $course = Course::find($course);
+        
+       
+       $course->delete();
+       return redirect()->route('admin.courses');
+    }
 }
